@@ -16,7 +16,7 @@ issues, please create an issue using the issue tracker.
 2. [PHP](http://php.net/) 5.5
 
 ## Running your game
-I included [RunGame.sh]() to make this process simpler. The script itself is
+I included [RunGame.sh](https://github.com/jessehorne/billy/blob/master/RunGame.sh) to make this process simpler. The script itself is
 simple, but it's better than having to type the commands each time you want to
 run your game.
 
@@ -38,7 +38,7 @@ implemented in the framework. For now, just check out the game examples in
 the [Show me some games](## Show me some games) section.
 
 ## Show me some games
-[PongHP]()
+[PongHP](https://github.com/jessehorne/ponghp)
 
 ## IRC (#billy-php on Freenode)
 If you're having issues you don't feel belong in the issue tracker, or just want
