@@ -1,7 +1,7 @@
 <?php
 
 $conf = [
-    "title" => "PongHP",
+    "title" => "Unamed Project",
     "width" => 1000,
     "height" => 600,
     "server_port" => 5555,
