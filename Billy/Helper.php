@@ -1,5 +1,7 @@
 <?php
 
+namespace Billy;
+
 class Helper {
     public function error($errors) {
         foreach ($errors as $error) {

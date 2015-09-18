@@ -33,6 +33,7 @@ protocol["newFont"] = 10
 protocol["setFont"] = 11
 protocol["newSound"] = 12
 protocol["playSound"] = 13
+protocol["arc"] = 14
 
 function send(data)
 	data = json.encode(data)
@@ -108,6 +109,7 @@ function love.draw()
     local data, ip = udp:receive()
 
     if data then
+		-- print(data)
         data = json.decode(data)
         if data.c == protocol["incoming"] then
             for i=1, data.a do
@@ -140,6 +142,8 @@ function love.draw()
 									sounds[y.a[1]] = love.audio.newSource(y.a[2], y.a[3])
 								elseif y.c == protocol["playSound"] then
 									sounds[y.a]:play()
+								elseif y.c == protocol["arc"] then
+									love.graphics.arc(unpack(y.a))
                                 end
                             end
                         end

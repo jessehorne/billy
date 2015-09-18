@@ -1,7 +1,12 @@
 <?php
 
+namespace Billy;
+
 include("./Billy/Helper.php");
 include("./Billy/Graphics.php");
+
+use Billy\Game;
+use Billy\Helper;
 
 abstract class Game {
     public static $sock;
@@ -35,7 +40,8 @@ abstract class Game {
             "newFont" => 10,
             "setFont" => 11,
             "newSound" => 12,
-            "playSound" => 13
+            "playSound" => 13,
+            "arc" => 14
         ];
 
         // Configuration file
@@ -154,35 +160,6 @@ abstract class Game {
         self::$queue = [];
     }
 
-    public function rectangle($mode, $x, $y, $width, $height) {
-        $status = Helper::validate([
-            $mode => "mode",
-            $x => "numeric",
-            $y => "numeric",
-            $width => "numeric",
-            $height => "numeric"
-        ]);
-
-        // This is done to save space, so that we can fit more data into
-        // requests.
-        $x = floor($x);
-        $y = floor($y);
-        $width = floor($width);
-        $height = floor($height);
-
-        Game::add_event([
-            "c" => self::$protocol["rectangle"],
-            "a" => [$mode, $x, $y, $width, $height]
-        ]);
-    }
-
-    public function set_color($rgba) {
-        Game::add_event([
-            "c" => self::$protocol["setColor"],
-            "a" => $rgba
-        ]);
-    }
-
     public function set_title($title) {
         Game::add_event([
             "c" => self::$protocol["setTitle"],
@@ -210,27 +187,6 @@ abstract class Game {
         $data = Helper::packet($packet);
 
         socket_sendto(self::$sock, $data, strlen($data), 0, "127.0.0.1", self::$config["client_port"]);
-    }
-
-    public function print_string($string, $x, $y) {
-        Game::add_event([
-            "c" => self::$protocol["print"],
-            "a" => [$string, $x, $y]
-        ]);
-    }
-
-    public function new_font($name, $path, $size) {
-        Game::add_event([
-            "c" => self::$protocol["newFont"],
-            "a" => [$name, $path, $size]
-        ]);
-    }
-
-    public function set_font($name) {
-        Game::add_event([
-            "c" => self::$protocol["setFont"],
-            "a" => $name
-        ]);
     }
 
     public function new_sound($name, $path, $option) {
