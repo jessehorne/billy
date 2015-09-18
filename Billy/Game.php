@@ -41,7 +41,8 @@ abstract class Game {
             "setFont" => 11,
             "newSound" => 12,
             "playSound" => 13,
-            "arc" => 14
+            "arc" => 14,
+            "circle" => 15
         ];
 
         // Configuration file

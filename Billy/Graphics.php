@@ -53,4 +53,11 @@ class Graphics {
             "a" => [$mode, $x, $y, $radius, $angle1, $angle2, $segments]
         ]);
     }
+
+    public function circle($mode, $x, $y, $radius, $segments) {
+        Game::add_event([
+            "c" => Game::$protocol["circle"],
+            "a" => [$mode, $x, $y, $radius, $segments]
+        ]);
+    }
 }
