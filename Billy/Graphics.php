@@ -93,4 +93,21 @@ class Graphics {
             "a" => func_get_args()
         ]);
     }
+
+    public function new_image() {
+        Game::add_event([
+            "c" => Game::$protocol["newImage"],
+            "a" => func_get_args()
+        ]);
+    }
+
+    public function draw_image() {
+        $args = func_get_args();
+        $path = array_splice($args, 0, 1);
+        Game::add_event([
+            "c" => Game::$protocol["drawImage"],
+            "i" => $path[0],
+            "a" => $args
+        ]);
+    }
 }

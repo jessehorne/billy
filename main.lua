@@ -11,6 +11,7 @@ print("Started Bobby on port " .. port .. "!")
 local queues = {}
 local fonts = {}
 local sounds = {}
+local images = {}
 
 local time = 0
 local frame = 0
@@ -41,6 +42,8 @@ protocol["point"] = 18
 protocol["polygon"] = 19
 protocol["present"] = 20
 protocol["print"] = 21
+protocol["newImage"] = 22
+protocol["drawImage"] = 23
 
 function send(data)
 	data = json.encode(data)
@@ -165,6 +168,10 @@ function love.draw()
 									love.graphics.present()
 								elseif y.c == protocol["print"] then
 									love.graphics.print(unpack(y.a))
+								elseif y.c == protocol["newImage"] then
+									images[y.a[1]] = love.graphics.newImage(y.a[2]);
+								elseif y.c == protocol["drawImage"] then
+									love.graphics.draw(images[y.i], unpack(y.a))
                                 end
                             end
                         end
