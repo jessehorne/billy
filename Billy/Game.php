@@ -45,7 +45,8 @@ abstract class Game {
             "circle" => 15,
             "clear" => 16,
             "line" => 17,
-            "point" => 18
+            "point" => 18,
+            "polygon" => 19
         ];
 
         // Configuration file

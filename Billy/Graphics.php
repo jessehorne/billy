@@ -80,4 +80,11 @@ class Graphics {
             "a" => [$x, $y]
         ]);
     }
+
+    public function polygon() {
+        Game::add_event([
+            "c" => Game::$protocol["polygon"],
+            "a" => func_get_args()
+        ]);
+    }
 }
