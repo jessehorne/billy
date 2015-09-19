@@ -1,5 +1,7 @@
 <?php
 
+namespace Billy;
+
 include("./Billy/Game.php");
 
 class MyGame extends Game {
@@ -17,7 +19,7 @@ class MyGame extends Game {
     }
 
     protected function draw() {
-        Game::print_string("You have successfully created a game! Now get to work.", 100, 100);
+        Graphics::print_string("You have successfully created a game! Now get to work.", 100, 100);
     }
 
     protected function key_pressed($key) {
