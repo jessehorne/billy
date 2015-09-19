@@ -37,6 +37,7 @@ protocol["arc"] = 14
 protocol["circle"] = 15
 protocol["clear"] = 16
 protocol["line"] = 17
+protocol["point"] = 18
 
 function send(data)
 	data = json.encode(data)
@@ -153,6 +154,8 @@ function love.draw()
 									love.graphics.clear()
 								elseif y.c == protocol["line"] then
 									love.graphics.line(unpack(y.a))
+								elseif y.c == protocol["point"] then
+									love.graphics.point(unpack(y.a))
                                 end
                             end
                         end

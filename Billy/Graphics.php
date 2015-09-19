@@ -73,4 +73,11 @@ class Graphics {
             "a" => func_get_args()
         ]);
     }
+
+    public function point($x, $y) {
+        Game::add_event([
+            "c" => Game::$protocol["point"],
+            "a" => [$x, $y]
+        ]);
+    }
 }
