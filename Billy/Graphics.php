@@ -26,13 +26,6 @@ class Graphics {
         ]);
     }
 
-    public function print_string($string, $x, $y) {
-        Game::add_event([
-            "c" => Game::$protocol["print"],
-            "a" => [$string, $x, $y]
-        ]);
-    }
-
     public function new_font($name, $path, $size) {
         Game::add_event([
             "c" => Game::$protocol["newFont"],
@@ -91,6 +84,13 @@ class Graphics {
     public function present() {
         Game::add_event([
             "c" => Game::$protocol["present"]
+        ]);
+    }
+
+    public function print_string() {
+        Game::add_event([
+            "c" => Game::$protocol["print"],
+            "a" => func_get_args()
         ]);
     }
 }

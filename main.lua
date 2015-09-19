@@ -40,6 +40,7 @@ protocol["line"] = 17
 protocol["point"] = 18
 protocol["polygon"] = 19
 protocol["present"] = 20
+protocol["print"] = 21
 
 function send(data)
 	data = json.encode(data)
@@ -162,6 +163,8 @@ function love.draw()
 									love.graphics.polygon(unpack(y.a))
 								elseif y.c == protocol["present"] then
 									love.graphics.present()
+								elseif y.c == protocol["print"] then
+									love.graphics.print(unpack(y.a))
                                 end
                             end
                         end
