@@ -42,7 +42,9 @@ abstract class Game {
             "newSound" => 12,
             "playSound" => 13,
             "arc" => 14,
-            "circle" => 15
+            "circle" => 15,
+            "clear" => 16,
+            "line" => 17
         ];
 
         // Configuration file

@@ -35,6 +35,8 @@ protocol["newSound"] = 12
 protocol["playSound"] = 13
 protocol["arc"] = 14
 protocol["circle"] = 15
+protocol["clear"] = 16
+protocol["line"] = 17
 
 function send(data)
 	data = json.encode(data)
@@ -147,6 +149,10 @@ function love.draw()
 									love.graphics.arc(unpack(y.a))
 								elseif y.c == protocol["circle"] then
 									love.graphics.circle(unpack(y.a))
+								elseif y.c == protocol["clear"] then
+									love.graphics.clear()
+								elseif y.c == protocol["line"] then
+									love.graphics.line(unpack(y.a))
                                 end
                             end
                         end

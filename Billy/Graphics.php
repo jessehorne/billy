@@ -60,4 +60,17 @@ class Graphics {
             "a" => [$mode, $x, $y, $radius, $segments]
         ]);
     }
+
+    public function clear() {
+        Game::add_event([
+            "c" => Game::$protocol["clear"]
+        ]);
+    }
+
+    public function line() {
+        Game::add_event([
+            "c" => Game::$protocol["line"],
+            "a" => func_get_args()
+        ]);
+    }
 }
