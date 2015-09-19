@@ -87,4 +87,10 @@ class Graphics {
             "a" => func_get_args()
         ]);
     }
+
+    public function present() {
+        Game::add_event([
+            "c" => Game::$protocol["present"]
+        ]);
+    }
 }
