@@ -8,7 +8,7 @@ to the screen.
 
 Please note that while this works, it can be buggy in some cases, it isn't
 very efficient, and has yet to implement the entire [LÖVE](https://love2d.org/)
-API. This was a project to help me learn PHP. So bare with me, and if you have
+API. This was a project to help me learn PHP. So bear with me, and if you have
 issues, please create an issue using the issue tracker.
 
 ## Prerequisites
