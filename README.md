@@ -40,7 +40,6 @@ the [Show me some games](## Show me some games) section.
 ## Show me some games
 [PongHP](https://github.com/jessehorne/ponghp)
 
-## IRC (#billy-php on Freenode)
+## IRC (##jesseh on Freenode)
 If you're having issues you don't feel belong in the issue tracker, or just want
-to chat, feel free to join #billy-php on Freenode. Yes, it has it's own channel. I
-have faith that I am not the only person who wants to create games using PHP. ;)
+to chat, feel free to join ##jesseh on Freenode.
